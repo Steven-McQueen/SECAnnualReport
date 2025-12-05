@@ -3,9 +3,9 @@
 A Streamlit application for retrieving annual SEC filings (10-K, 20-F, 40-F) for a list of ticker symbols.
 The app downloads the documents as PDFs or returns URLs only, and produces a manifest CSV summarizing results.
 
-# ✅ 1. Installation Guide
+## ✅ 1. Installation Guide
 ------------------------------------
-## 1.1 Install Python
+### 1.1 Install Python
 
 You must have Python 3.10 or newer installed.
 
@@ -15,7 +15,7 @@ Download Python from:
 During installation, ensure you check:
     Add Python to PATH
 
-## 1.2 Install required Python packages
+### 1.2 Install required Python packages
 
 Open Command Prompt or PowerShell, then run:
 
@@ -30,11 +30,11 @@ HTTP requests to the SEC (requests)
 
 Data handling and manifest files (pandas)
 
-## 1.3 Install wkhtmltopdf (Required only if you download PDFs)
+### 1.3 Install wkhtmltopdf (Required only if you download PDFs)
 
 This tool converts SEC HTML filings into PDF format.
 
-### Step A — Download wkhtmltopdf
+#### Step A — Download wkhtmltopdf
 
 Visit:
 
@@ -42,7 +42,7 @@ Visit:
 
 Download the Windows 64-bit installer.
 
-### Step B — Install
+#### Step B — Install
 
 Run the installer and keep the default installation options.
 
@@ -55,18 +55,16 @@ If it differs on your system, update the path in sec_downloader.py:
 
 WKHTMLTOPDF = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
 
-## 1.4. Set your SEC User-Agent (Mandatory)
-
+### 1.4. Set your SEC User-Agent (Mandatory)
 The SEC requires all automated scripts to identify themselves.
 
 In sec_downloader.py, update this line:
-
-## USER_AGENT = "Your Name fy-report-downloader/1.0 (youremail@example.com)" 
+SER_AGENT = "Your Name fy-report-downloader/1.0 (youremail@example.com)" 
 
 ------------------------------------
 
 
-# 📁 2. Folder Structure
+## 📁 2. Folder Structure
 
 Your project folder should look like:
 
@@ -83,7 +81,7 @@ downloads/
         <pdf files if enabled>
         manifest_fy2023.csv
 
-# ▶️ 3. How to Run the Application
+## ▶️ 3. How to Run the Application
 Open Command Prompt or PowerShell
 Navigate to your project directory:
 
@@ -95,16 +93,16 @@ Start the Streamlit application:
 -> streamlit run app.py
 
 
-# 🧭 4. How to Use the App
-## Step 1 — Provide tickers
+## 🧭 4. How to Use the App
+### Step 1 — Provide tickers
 
-### A Upload a CSV or Excel
+#### A Upload a CSV or Excel
 - Must contain a column named Ticker
 - If not, the first column is used
-### B. Type or paste tickers manually
+#### B. Type or paste tickers manually
 - Both methods can be combined — tickers are cleaned and deduplicated automatically.
 
-## Step 2 — Configure Settings
+### Step 2 — Configure Settings
 - In the sidebar, choose:
 - Fiscal year (e.g., 2023)
 - Form types (10-K, 20-F, 40-F)
@@ -114,7 +112,7 @@ Start the Streamlit application:
 ON → create PDFs using wkhtmltopdf
 OFF → return URLs only (no PDF generation)
 
-## Step 3 — Download filings
+### Step 3 — Download filings
 
 Click: 🚀 Download filings
 
@@ -123,7 +121,7 @@ The app shows:
 - Current ticker being processed
 - Number completed vs. total
 
-# Step 4 — View results
+## Step 4 — View results
 
 The app displays:
 📊 Manifest table
@@ -136,7 +134,7 @@ The app displays:
 - Saved PDF path (if enabled)
 ⬇️ Manifest CSV download button
 
-# 📄 5. Output Files
+## 📄 5. Output Files
 Inside your configured download directory:
 downloads/
     fy<year>/
@@ -147,7 +145,7 @@ downloads/
 
 -> If PDF mode is OFF, only the manifest CSV is created.
 
-# 🛠 6. Troubleshooting
+## 🛠 6. Troubleshooting
 ### ❌ wkhtmltopdf not found
 If Download PDFs is ON and wkhtmltopdf is missing or the path is incorrect, you’ll see an error:
     wkhtmltopdf not found…
@@ -170,4 +168,5 @@ Some companies may not have submitted the requested form for that year.
 Check:
 - Status column
 - Notes column
+
 
