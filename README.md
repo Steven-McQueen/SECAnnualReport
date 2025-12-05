@@ -80,7 +80,6 @@ downloads/
     fy2023/
         <pdf files if enabled>
         manifest_fy2023.csv
-
 ## ▶️ 3. How to Run the Application
 Open Command Prompt or PowerShell
 Navigate to your project directory:
@@ -143,7 +142,7 @@ downloads/
         MSFT_FY2023_10-K.pdf        (if PDF mode)
         ...
 
--> If PDF mode is OFF, only the manifest CSV is created.
+-> If PDF mode is OFF, nothing is created except the folder
 
 ## 🛠 6. Troubleshooting
 ### ❌ wkhtmltopdf not found
@@ -168,5 +167,6 @@ Some companies may not have submitted the requested form for that year.
 Check:
 - Status column
 - Notes column
+
 
 
